@@ -133,8 +133,8 @@ class RangerLars(Optimizer):
                 if p.grad is None:
                     continue
                 #at k interval: take the difference of (RAdam params - LookAhead params) * LookAhead alpha param
-                q.data.add_(self.alpha,p_data_fp32 - q.data) 
-                #update novo's weights with the interpolated weights
+                q.data.add_(self.alpha,p.data - q.data) 
+                #update RAdam weights with the interpolated weights
                 p.data.copy_(q.data)        
             
         return loss        
