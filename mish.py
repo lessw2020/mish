@@ -11,5 +11,5 @@ class Mish(nn.Module):
         super().__init__()
 
     def forward(self, x):
-        x = x *( torch.tanh(F.softplus(x))
+        x = x *( torch.tanh(F.softplus(x)))
         return x
