@@ -15,7 +15,7 @@ class RangerLars(Optimizer):
         if not 0.0 <= alpha <= 1.0:
             raise ValueError(f'Invalid slow update rate: {alpha}')
         if not 1 <= k:
-                raise ValueError(f'Invalid lookahead steps: {k}') 
+            raise ValueError(f'Invalid lookahead steps: {k}') 
             
         defaults = dict(lr=lr, alpha=alpha, k=k, betas=betas, eps=eps, weight_decay=weight_decay)
         self.buffer = [[None, None, None] for ind in range(10)]
